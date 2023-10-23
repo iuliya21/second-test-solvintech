@@ -67,13 +67,11 @@ const App = observer(() => {
             <img
               src={require("../images/party-step2.svg").default}
               alt="Вечеринка"
-              className="absolute z-0 right-0 bottom-0"
+              className="absolute z-0 right-0 bottom-0 max-sm:hidden"
             />
           </>
         ) : null}
-        {step === 3 ? (
-          <Date />
-        ): null}
+        {step === 3 ? <Date /> : null}
       </Modal>
     </div>
   );

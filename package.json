@@ -2,6 +2,7 @@
   "name": "second-test-solvintech",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://iuliya21.github.io/second-test-solvintech",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -11,6 +12,7 @@
     "@types/react": "^18.2.31",
     "@types/react-dom": "^18.2.14",
     "axios": "^1.5.1",
+    "gh-pages": "^6.0.0",
     "mobx": "^6.10.2",
     "mobx-react": "^9.0.1",
     "mobx-react-lite": "^4.0.5",
@@ -30,7 +32,9 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "craco eject"
+    "eject": "craco eject",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
   },
   "eslintConfig": {
     "extends": [

@@ -6,7 +6,9 @@ const Button = observer(() => {
   const { next } = counterStep;
 
   return (
-    <button onClick={() => next()} className="leading-none uppercase cursor-pointer text-white font-black bg-colorBlue h-[72px] rounded-[15px] flex justify-center items-center gap-x-[10px]">
+    <button onClick={() => next()} className="leading-none uppercase cursor-pointer
+     text-white font-black bg-colorBlue h-[72px] rounded-[15px] flex justify-center 
+     items-center gap-x-[10px] max-sm:hidden">
       <img
         src={require("../images/button-icon.svg").default}
         alt="Иконка кнопки"

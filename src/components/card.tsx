@@ -1,19 +1,56 @@
 import Button from "@components/button";
+import ButtonCroppedLeft from "@components/buttonCroppedLeft";
+import ButtonCropped from "@components/buttonCropped";
+import { useEffect, useState } from "react";
 
 type TCardProps = {
   title: string;
 };
 
 const Card: React.FC<TCardProps> = ({ title }) => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
   const isBase = title === "Базовый";
   const isSuper = title === "Супер-праздник";
+  const isCool = title === "Улетный";
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const isSmallScreen = windowWidth < 640;
+
+  const style = {
+    backgroundPositionY: isSmallScreen ? "40%" : "",
+    backgroundPositionX: isSmallScreen ? "50%" : "",
+  };
+
+  const container = isBase
+    ? `rounded-[15px] bg-white w-[295px] max-sm:w-[335px] h-[465px] max-sm:h-[366px] 
+    p-5 max-sm:p-10 flex flex-col gap-y-6 max-sm:bg-transparent max-sm:bg-background-programm`
+    : isCool
+    ? `rounded-[15px] bg-white w-[295px] max-sm:w-[335px] h-[465px] max-sm:h-[398px] 
+    p-5 max-sm:p-10 flex flex-col gap-y-6 max-sm:bg-transparent max-sm:bg-background-programm-cool`
+    : `rounded-[15px] bg-white w-[295px] max-sm:w-[335px] h-[465px] max-sm:h-[470px] 
+    p-5 max-sm:p-10 flex flex-col gap-y-6 max-sm:bg-transparent max-sm:bg-background-programm-super`;
 
   return (
-    <div className="rounded-[15px] bg-white w-[295px] h-[465px] p-5 flex flex-col gap-y-6">
+    <div className={container} style={style}>
       <h2 className="font-extrabold text-lg leading-none">{title}</h2>
-      <ul className="flex flex-col gap-y-4">
+      <ul className="flex flex-col gap-y-4 max-sm:gap-y-2">
         <li className="flex gap-x-[10px] items-center">
-          <div className="bg-colorBlue w-[24px] h-[24px] flex justify-center items-center rounded-[8px]">
+          <div
+            className="bg-colorBlue w-[24px] h-[24px] flex justify-center 
+          items-center rounded-[8px]"
+          >
             <img
               src={require("../images/tickets.svg").default}
               alt="Иконка"
@@ -23,7 +60,10 @@ const Card: React.FC<TCardProps> = ({ title }) => {
           <p className="leading-none">5 билетов</p>
         </li>
         <li className="flex gap-x-[10px] items-center">
-          <div className="bg-colorBlue w-[24px] h-[24px] flex justify-center items-center rounded-[8px]">
+          <div
+            className="bg-colorBlue w-[24px] h-[24px] flex justify-center 
+          items-center rounded-[8px]"
+          >
             <img
               src={require("../images/VIP.svg").default}
               alt="Иконка"
@@ -40,7 +80,11 @@ const Card: React.FC<TCardProps> = ({ title }) => {
           />
           <p className="leading-none">Взрослые бесплатно</p>
         </li>
-        <li className="flex gap-x-[10px] items-center min-h-[24px]">
+        <li
+          className={`flex gap-x-[10px] items-center min-h-[24px] ${
+            isBase ? "max-sm:hidden" : ""
+          }`}
+        >
           <div
             className={
               isBase
@@ -64,7 +108,11 @@ const Card: React.FC<TCardProps> = ({ title }) => {
             Анимационная программа
           </p>
         </li>
-        <li className="flex gap-x-[10px] items-center min-h-[24px]">
+        <li
+          className={`flex gap-x-[10px] items-center min-h-[24px] ${
+            (isBase || isCool) ? "max-sm:hidden" : ""
+          }`}
+        >
           <div
             className={
               !isSuper
@@ -83,17 +131,25 @@ const Card: React.FC<TCardProps> = ({ title }) => {
             />
           </div>
           <p
-            className={!isSuper ? `leading-none text-colorGrey` : `leading-none`}
+            className={
+              !isSuper ? `leading-none text-colorGrey` : `leading-none`
+            }
           >
             Серебряная дискотека
           </p>
         </li>
-        <li className="flex gap-x-[10px] items-center min-h-4">
-          <div className={
+        <li
+          className={`flex gap-x-[10px] items-center min-h-[24px] ${
+            (isBase || isCool) ? "max-sm:hidden" : ""
+          }`}
+        >
+          <div
+            className={
               !isSuper
                 ? `flex items-center rounded-[8px] w-[26px] h-[24px]`
                 : `bg-colorBlue w-[26px] h-[24px] flex justify-center items-center rounded-[8px]`
-            }>
+            }
+          >
             <img
               src={
                 !isSuper
@@ -105,7 +161,9 @@ const Card: React.FC<TCardProps> = ({ title }) => {
             />
           </div>
           <p
-            className={!isSuper ? `leading-none text-colorGrey` : `leading-none`}
+            className={
+              !isSuper ? `leading-none text-colorGrey` : `leading-none`
+            }
           >
             Мыльные пузыри с погружением
           </p>
@@ -127,6 +185,8 @@ const Card: React.FC<TCardProps> = ({ title }) => {
           </li>
         </ul>
         <Button />
+        {isSmallScreen && (isBase || isSuper) && <ButtonCroppedLeft text="Выбрать" />}
+        {isSmallScreen && isCool && <ButtonCropped text="Выбрать" />}
       </div>
     </div>
   );

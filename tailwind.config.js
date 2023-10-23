@@ -12,6 +12,7 @@ module.exports = {
       },
       backgroundImage: {
         "svg-background": "url('@images/sum.svg')",
+        "svg-background-small": "url('@images/sum-small.svg')",
         "close-button": "url('@images/close-button.svg')",
         "background-countguest": "url('@images/countguest.svg')",
         "background-btn-continue": "url('@images/button-continue.svg')",

@@ -5,9 +5,29 @@ import Date from "@components/date";
 import { observer } from "mobx-react-lite";
 import counterStep from "../stores/storeStep";
 import CountGuest from "./countGuest";
+import { useEffect, useState } from "react";
 
 const App = observer(() => {
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const isSmallScreen = windowWidth < 768;
+
   const { step } = counterStep;
+
+  const titleStep3 = isSmallScreen ? "Выберите дату" : "Выберите подходящую дату";
 
   let stepNameCurrent;
   let titleModal;
@@ -15,7 +35,7 @@ const App = observer(() => {
   switch (step) {
     case 1:
       stepNameCurrent = "Программа";
-      titleModal = "Праздничные программы";
+      titleModal = "Праздничная программы";
       break;
     case 2:
       stepNameCurrent = "Гости";
@@ -23,7 +43,7 @@ const App = observer(() => {
       break;
     case 3:
       stepNameCurrent = "Даты";
-      titleModal = "Выберите подходящую дату";
+      titleModal = titleStep3;
       break;
     case 4:
       stepNameCurrent = "Именинник";

@@ -24,49 +24,57 @@ const CountGuest = observer(() => {
 
   const errorCount = countGuestChild > 20;
 
-  const container = (errorCount && isSmallScreen)
-    ? `bg-background-count-middle w-[335px] h-[344px] flex 
-  flex-col p-10 relative z-10 max-sm:gap-y-[24px]`
-    : isSmallScreen
-      ? `bg-background-count-small w-[335px] h-[288px] flex 
-  flex-col p-10 relative z-10 justify-between`
+  const container =
+    errorCount && isSmallScreen
+      ? `bg-background-count-middle w-[375px] h-[404px] flex flex-col
+       relative z-10 ml-[-20px] mt-[-25px] p-[60px]`
+      : isSmallScreen
+      ? `bg-background-count-small w-[375px] h-[348px] flex 
+      flex-col relative z-10 justify-between ml-[-20px] mt-[-25px] p-[60px]`
       : `bg-background-countguest w-[530px] h-[480px] flex 
-  flex-col relative z-10 justify-between mt-[-25px] ml-[-30px] p-[70px]`;
+      flex-col relative z-10 justify-between mt-[-25px] ml-[-30px] p-[70px]`;
 
-  const wrapper = `w-[470px] h-[420px]`
+  const wrapper =
+    (errorCount && isSmallScreen)
+      ? `w-[335px] h-[344px] overflow-hidden`
+      : isSmallScreen
+      ? `w-[335px] h-[288px]`
+      : `w-[470px] h-[420px]`;
 
   return (
     <div className={wrapper}>
-      <div
-        className={container}
-      >
+      <div className={container}>
         <div>
-          <div className="flex gap-x-10">
-            <div className="max-w-[178px] max-sm:max-w-[91px]">
-              <h3 className="text-4xl font-extrabold leading-none max-sm:text-lg">
+          <div className="flex gap-x-10 max-sm:gap-x-[25px]">
+            <div className="max-w-[178px] max-sm:w-[91px]">
+              <h3 className="text-4xl font-extrabold leading-none max-sm:text-lg ">
                 Дети
               </h3>
               <p className="text-2xl font-bold leading-none text-colorGrey mt-1 max-sm:text-[13px]">
                 +1 200₽ за ребенка
               </p>
             </div>
-            <div className="flex items-center gap-x-5">
+            <div className="flex items-center gap-x-5 max-sm:gap-x-3">
               <div className="w-[45px] h-[45px]">
-                <button className="bg-background-btn-decr w-[105px] h-[105px] ml-[-30px] mt-[-24px]
-                cursor-pointer" onClick={() => setCountGuestChild((prev) => prev - 1)}>
-                </button>
+                <button
+                  className="bg-background-btn-decr w-[105px] h-[105px] ml-[-30px] mt-[-24px]
+                cursor-pointer"
+                  onClick={() => setCountGuestChild((prev) => prev - 1)}
+                ></button>
               </div>
               <p className="text-4xl text-colorGreen font-black max-sm:text-2xl max-sm:mb-3">
                 {countGuestChild}
               </p>
               <div className="w-[45px] h-[45px]">
-                <button className="bg-background-btn-inc w-[105px] h-[105px] ml-[-30px] mt-[-24px]
-                cursor-pointer" onClick={() => setCountGuestChild((prev) => prev + 1)}>
-                </button>
+                <button
+                  className="bg-background-btn-inc w-[105px] h-[105px] ml-[-30px] mt-[-24px]
+                cursor-pointer"
+                  onClick={() => setCountGuestChild((prev) => prev + 1)}
+                ></button>
               </div>
             </div>
           </div>
-          <div className="flex gap-x-10 mt-10">
+          <div className="flex gap-x-10 mt-10 max-sm:gap-x-[25px] max-sm:mt-6">
             <div className="max-w-[178px] max-sm:max-w-[91px] flex flex-col">
               <h3 className="text-4xl font-extrabold leading-none max-sm:text-lg">
                 Взрослые
@@ -78,31 +86,34 @@ const CountGuest = observer(() => {
                 Бесплатно
               </p>
             </div>
-            <div className="flex items-center gap-x-5">
+            <div className="flex items-center gap-x-5 max-sm:gap-x-3">
               <div className="w-[45px] h-[45px]">
-                <button className="bg-background-btn-decr w-[105px] h-[105px] ml-[-30px] mt-[-24px]
-                cursor-pointer" onClick={() => setCountGuestAdults((prev) => prev - 1)}>
-                </button>
+                <button
+                  className="bg-background-btn-decr w-[105px] h-[105px] ml-[-30px] mt-[-24px]
+                cursor-pointer"
+                  onClick={() => setCountGuestAdults((prev) => prev - 1)}
+                ></button>
               </div>
               <p className="text-4xl text-colorGreen font-black max-sm:text-2xl max-sm:mb-3">
                 {countGuestAdults}
               </p>
               <div className="w-[45px] h-[45px]">
-                <button className="bg-background-btn-inc w-[105px] h-[105px] ml-[-30px] mt-[-24px]
-                cursor-pointer" onClick={() => setCountGuestAdults((prev) => prev + 1)}>
-                </button>
+                <button
+                  className="bg-background-btn-inc w-[105px] h-[105px] ml-[-30px] mt-[-24px]
+                cursor-pointer"
+                  onClick={() => setCountGuestAdults((prev) => prev + 1)}
+                ></button>
               </div>
-
             </div>
           </div>
         </div>
 
         {countGuestChild <= 20 ? (
-          <div className="flex justify-center mt-[56px] max-sm:mt-5 items-center">
+          <div className="flex justify-center items-center mt-[56px] max-sm:mt-6">
             <ButtonCropped text="Продолжить" />
           </div>
         ) : (
-          <div className="flex justify-center flex-col items-center">
+          <div className="flex justify-center flex-col items-center pt-10">
             <div
               className="bg-colorRed w-6 h-6 flex justify-center items-center 
           rounded-lg mb-3"
@@ -124,7 +135,6 @@ const CountGuest = observer(() => {
         )}
       </div>
     </div>
-
   );
 });
 

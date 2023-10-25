@@ -74,10 +74,10 @@ const Modal: React.FC<TModalProps> = observer(
             bg-svg-background max-lg:bg-svg-background-small min-w-[120px] max-sm:min-w-[108px]"
             style={{ backgroundPositionY: "40%", backgroundPositionX: "50%" }}
           >
-            <p className="text-center font-bold text-sm leading-none max-sm:ml-3">
+            <p className="text-center font-bold text-sm leading-none max-lg:ml-3">
               Итог
             </p>
-            <p className="text-center font-bold text-xl leading-none text-colorGreen max-sm:ml-3">
+            <p className="text-center font-bold text-xl leading-none text-colorGreen max-lg:ml-3">
               34 500₽
             </p>
           </div>

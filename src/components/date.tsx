@@ -78,10 +78,10 @@ const Date = () => {
         >
           <div
             className="hidden max-sm:flex justify-center items-center bg-background-message-sm 
-            absolute w-[68px] h-[40px] z-10 right-[72px] top-[40px] rounded-[8px]"
+            absolute w-[100px] h-[60px] z-10 right-[57px] top-[35px] pr-2"
             style={{ backgroundPositionY: "30%", backgroundPositionX: "50%" }}
           >
-            <p className="text-[10px] font-bold max-w-[45px] leading-none mt-1 mr-1">Загрузка центра</p>
+            <p className="text-[10px] font-bold leading-none">Загрузка <br/> центра</p>
           </div>
           <div className="absolute hidden max-sm:block right-[8px] top-[15px]">
             <img
@@ -97,11 +97,11 @@ const Date = () => {
             {isSmallScreen && <ButtonCroppedLeft text="Выбрать" />}
           </div>
           <div
-            className="right-[59px] bottom-[48px] absolute w-[117px] h-[68px] bg-background-message z-10
-            max-sm:hidden"
+            className="right-[42px] bottom-[34px] absolute w-[160px] h-[100px] bg-background-message z-10
+            max-sm:hidden flex justify-center items-center pr-5"
             style={{ backgroundPositionY: "30%", backgroundPositionX: "45%" }}
           >
-            <p className="leading-[1.2] ml-[17px] mt-[17px]">Загрузка центра</p>
+            <p className="leading-[1.2]">Загрузка <br /> центра</p>
           </div>
           <img
             src={require("../images/loading-center-green.svg").default}
@@ -116,10 +116,11 @@ const Date = () => {
           style={{ backgroundPositionY: "40%", backgroundPositionX: "50%" }}
         >
           <div
-            className="left-[58px] top-[55px] absolute w-[117px] h-[68px] bg-background-message-left z-10"
+            className="left-[40px] top-[42px] absolute bg-background-message-left z-10
+            max-sm:hidden w-[160px] h-[100px] flex justify-center items-center pl-3"
             style={{ backgroundPositionY: "30%", backgroundPositionX: "45%" }}
           >
-            <p className="leading-[1.2] ml-[35px] mt-[17px]">Загрузка центра</p>
+            <p className="leading-[1.2]">Загрузка <br /> центра</p>
           </div>
           <img
             src={require("../images/loading-center-red.svg").default}
@@ -137,12 +138,12 @@ const Date = () => {
           className={`${container} ${containerBackgroungRed}`}
           style={{ backgroundPositionY: "40%", backgroundPositionX: "50%" }}
         >
-           <div
+          <div
             className="hidden max-sm:flex justify-center items-center bg-background-message-sm 
-            absolute w-[68px] h-[40px] z-10 right-[72px] top-[40px] rounded-[8px]"
+            absolute w-[100px] h-[60px] z-10 right-[57px] top-[35px] pr-2"
             style={{ backgroundPositionY: "30%", backgroundPositionX: "50%" }}
           >
-            <p className="text-[10px] font-bold max-w-[45px] leading-none mt-1 mr-1">Загрузка центра</p>
+            <p className="text-[10px] font-bold leading-none">Загрузка <br /> центра</p>
           </div>
           <div className="absolute hidden max-sm:block right-[8px] top-[15px]">
             <img
@@ -151,11 +152,11 @@ const Date = () => {
             />
           </div>
           <div
-            className="left-[58px] top-[55px] absolute w-[117px] h-[68px] bg-background-message-left z-10
-            max-sm:hidden"
+            className="left-[40px] top-[42px] absolute bg-background-message-left z-10
+            max-sm:hidden w-[160px] h-[100px] flex justify-center items-center pl-3"
             style={{ backgroundPositionY: "30%", backgroundPositionX: "45%" }}
           >
-            <p className="leading-[1.2] ml-[35px] mt-[17px]">Загрузка центра</p>
+            <p className="leading-[1.2]"> Загрузка <br /> центра</p>
           </div>
           <img
             src={require("../images/loading-center-red.svg").default}
@@ -182,10 +183,11 @@ const Date = () => {
             <ButtonCropped text="Выбрать" />
           </div>
           <div
-            className="right-[59px] bottom-[48px] absolute w-[117px] h-[68px] bg-background-message z-10"
+            className="right-[35px] bottom-[34px] absolute w-[160px] h-[100px] bg-background-message z-10
+            max-sm:hidden flex justify-center items-center pr-5"
             style={{ backgroundPositionY: "30%", backgroundPositionX: "45%" }}
           >
-            <p className="leading-[1.2] ml-[17px] mt-[17px]">Загрузка центра</p>
+            <p className="leading-[1.2]">Загрузка <br /> центра</p>
           </div>
           <img
             src={require("../images/loading-center-green.svg").default}

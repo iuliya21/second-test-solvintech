@@ -32,6 +32,7 @@ module.exports = {
         "background-count-middle": "url('@images/frame-count-middle.svg')",
         "background-frame-date-sm": "url('@images/frame-date-sm.svg')",
         "background-frame-date-sm-left": "url('@images/frame-date-sm-left.svg')",
+        "shadow": "filter: drop-shadow(0px 7px 30px rgba(0, 0, 0, 0.10))",
       },
     },
   },

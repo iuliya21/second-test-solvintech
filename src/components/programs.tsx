@@ -11,7 +11,8 @@ const Programs: React.FC<TProgramsProps> = ({ children }) => {
         className="cursor-pointer 
         max-xl:hidden"
       />
-      <div className="w-[940px] max-xl:w-full flex justify-center gap-[28px] max-sm:gap-5 max-xl:flex-wrap">
+      <div className="w-[940px] max-xl:w-full flex justify-center 
+      gap-[28px] max-sm:gap-5 max-xl:flex-wrap">
         {children}
       </div>
       <img

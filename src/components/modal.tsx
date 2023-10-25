@@ -15,9 +15,9 @@ const Modal: React.FC<TModalProps> = observer(
     return (
       <div
         className="relative items-center flex-col my-[124px] max-lg:my-0 py-[31px] 
-      max-lg:p-[20px] 
-      max-lg:pb-[40px] bg-backgroundColorModal flex w-[1280px] max-xl:w-screen min-h-[835px] 
-      rounded-[40px] max-md:rounded-none"
+        max-lg:p-[20px] 
+        max-lg:pb-[40px] bg-backgroundColorModal flex w-[1280px] max-xl:w-screen min-h-[835px] 
+        rounded-[40px] max-md:rounded-none"
       >
         <div
           className="bg-close-button w-[30px] h-[30px] absolute top-10 right-10 
@@ -41,9 +41,7 @@ const Modal: React.FC<TModalProps> = observer(
           </div>
         </div>
         <div
-          className="w-[938px] flex gap-x-[20px] max-lg:gap-x-[34px] max-sm:gap-x-[26px] 
-        max-lg:w-full 
-        min-h-[54px]"
+          className="w-[938px] flex gap-x-[20px] max-lg:gap-x-[34px] max-lg:w-full max-h-[52px]"
         >
           <div className="flex flex-col justify-between w-[800px] max-lg:w-full">
             <div className="h-[6px] bg-white rounded">
@@ -62,24 +60,25 @@ const Modal: React.FC<TModalProps> = observer(
               )}
               <div
                 className="flex gap-x-[6px] bg-colorBlue rounded-[10px]
-             rounded-tl-none max-w-min px-[10px] py-1 text-white"
+                rounded-tl-none max-w-min px-[10px] py-1 text-white"
               >
                 <span className="font-extrabold leading-none">{step}/8. </span>
                 <span className="leading-none">{stepName}</span>
               </div>
             </div>
           </div>
-          <div
-            className="flex flex-col gap-y-[6px] justify-center
-            bg-svg-background max-lg:bg-svg-background-small min-w-[120px] max-sm:min-w-[108px]"
-            style={{ backgroundPositionY: "40%", backgroundPositionX: "50%" }}
-          >
-            <p className="text-center font-bold text-sm leading-none max-lg:ml-3">
+          <div className="h-[52px] w-[118px] max-sm:w-[98px]">
+            <div
+              className="pb-3 flex flex-col gap-y-[6px] justify-center bg-svg-background max-lg:bg-svg-background-small
+              w-[178px] max-sm:w-[148px] h-[114px] max-sm:min-w-[108px] ml-[-30px] mt-[-24px] max-lg:pr-4 max-sm:pr-0 max-sm:pl-2"
+            >
+              <p className="text-center font-bold text-sm leading-none">
               Итог
             </p>
-            <p className="text-center font-bold text-xl leading-none text-colorGreen max-lg:ml-3">
+            <p className="text-center font-bold text-xl leading-none text-colorGreen">
               34 500₽
             </p>
+            </div>
           </div>
         </div>
         <h1 className="text-4xl max-sm:text-2xl font-extrabold mt-10 mb-6 max-sm:mb-5">

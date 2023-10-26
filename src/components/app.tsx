@@ -6,6 +6,7 @@ import { observer } from "mobx-react-lite";
 import counterStep from "../stores/storeStep";
 import CountGuest from "./countGuest";
 import { useEffect, useState } from "react";
+import Birthday from "@components/birthday";
 
 const App = observer(() => {
 
@@ -92,6 +93,19 @@ const App = observer(() => {
           </>
         ) : null}
         {step === 3 ? <Date /> : null}
+        {step === 4 && (
+          <>
+            <Birthday />
+
+            {!isSmallScreen &&
+              <img src={require("../images/gifts.svg").default} alt="Подарки"
+                className="absolute max-w-[1353px] h-full top-[100px] right-[-60px]" />}
+            {!isSmallScreen &&
+              <img src={require("../images/rainbow.svg").default} alt="Радуга"
+                className="absolute w-[282px] h-[272px] top-[40%] left-[15px]" />
+            }
+          </>
+        )}
       </Modal>
     </div>
   );

@@ -9,6 +9,7 @@ module.exports = {
         colorGreen: "#39B54A",
         colorGrey: "#949494",
         colorRed: "#F45741",
+        colorWhite: "#FFF"
       },
       backgroundImage: {
         "svg-background": "url('@images/sum.svg')",
@@ -32,7 +33,10 @@ module.exports = {
         "background-count-middle": "url('@images/frame-count-middle.svg')",
         "background-frame-date-sm": "url('@images/frame-date-sm.svg')",
         "background-frame-date-sm-left": "url('@images/frame-date-sm-left.svg')",
-        "shadow": "filter: drop-shadow(0px 7px 30px rgba(0, 0, 0, 0.10))",
+        "background-frame-birthday": "url('@images/frame-birthday.svg')",
+        "background-frame-birthday-small": "url('@images/frame-birthday-small.svg')",
+        "shadow": "box-shadow: 0px 7px 30px 0px rgba(0, 0, 0, 0.10),",
+        "filter": "filter: drop-shadow(0px 7px 30px rgba(0, 0, 0, 0.10))"
       },
     },
   },

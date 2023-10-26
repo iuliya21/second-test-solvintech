@@ -80,9 +80,9 @@ const Modal: React.FC<TModalProps> = observer(
             </div>
           </div>
         </div>
-        <h1 className="text-4xl max-sm:text-2xl font-extrabold mt-10 mb-6 max-sm:mb-5">
+        <h2 className="text-4xl max-sm:text-2xl font-extrabold mt-10 mb-6 max-sm:mb-5">
           {title}
-        </h1>
+        </h2>
         {children}
         {step !== 1 && (
           <button

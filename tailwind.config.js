@@ -35,8 +35,10 @@ module.exports = {
         "background-frame-date-sm-left": "url('@images/frame-date-sm-left.svg')",
         "background-frame-birthday": "url('@images/frame-birthday.svg')",
         "background-frame-birthday-small": "url('@images/frame-birthday-small.svg')",
-        "shadow": "box-shadow: 0px 7px 30px 0px rgba(0, 0, 0, 0.10),",
-        "filter": "filter: drop-shadow(0px 7px 30px rgba(0, 0, 0, 0.10))"
+        
+      },
+      boxShadow: {
+        custom: '0px 7px 30px 0px rgba(0, 0, 0, 0.10)',
       },
     },
   },

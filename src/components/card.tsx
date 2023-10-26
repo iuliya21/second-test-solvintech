@@ -47,8 +47,8 @@ const Card: React.FC<TCardProps> = ({ title }) => {
 
   return (
     <div className={wrapper}>
-      <div className={container}>
-        <h2 className="font-extrabold text-lg leading-none">{title}</h2>
+      <div className={`${container} shadow-custom`}>
+        <h3 className="font-extrabold text-lg leading-none">{title}</h3>
         <ul className="flex flex-col gap-y-4 max-sm:gap-y-2">
           <li className="flex gap-x-[10px] items-center">
             <div

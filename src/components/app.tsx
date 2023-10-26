@@ -7,9 +7,10 @@ import counterStep from "../stores/storeStep";
 import CountGuest from "./countGuest";
 import { useEffect, useState } from "react";
 import Birthday from "@components/birthday";
+import Animation from "@components/animation";
+import CardQuest from "./cardQuest";
 
 const App = observer(() => {
-
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -28,7 +29,9 @@ const App = observer(() => {
 
   const { step } = counterStep;
 
-  const titleStep3 = isSmallScreen ? "Выберите дату" : "Выберите подходящую дату";
+  const titleStep3 = isSmallScreen
+    ? "Выберите дату"
+    : "Выберите подходящую дату";
 
   let stepNameCurrent;
   let titleModal;
@@ -97,14 +100,27 @@ const App = observer(() => {
           <>
             <Birthday />
 
-            {!isSmallScreen &&
-              <img src={require("../images/gifts.svg").default} alt="Подарки"
-                className="absolute max-w-[1353px] h-full top-[100px] right-[-60px]" />}
-            {!isSmallScreen &&
-              <img src={require("../images/rainbow.svg").default} alt="Радуга"
-                className="absolute w-[282px] h-[272px] top-[40%] left-[15px]" />
-            }
+            {!isSmallScreen && (
+              <img
+                src={require("../images/gifts.svg").default}
+                alt="Подарки"
+                className="absolute max-w-[1353px] h-full top-[100px] right-[-60px]"
+              />
+            )}
+            {!isSmallScreen && (
+              <img
+                src={require("../images/rainbow.svg").default}
+                alt="Радуга"
+                className="absolute w-[282px] h-[272px] top-[40%] left-[15px]"
+              />
+            )}
           </>
+        )}
+        {step === 5 && (
+          <Animation>
+            <CardQuest title="Щенячий патруль возвращается" />
+            <CardQuest title="Стив Майнкрафт" />
+          </Animation>
         )}
       </Modal>
     </div>

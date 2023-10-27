@@ -35,7 +35,12 @@ module.exports = {
         "background-frame-date-sm-left": "url('@images/frame-date-sm-left.svg')",
         "background-frame-birthday": "url('@images/frame-birthday.svg')",
         "background-frame-birthday-small": "url('@images/frame-birthday-small.svg')",
-        
+        "background-animation-1": "url('@images/frame-animation-1.svg')",
+        "background-animation-2": "url('@images/frame-animation-2.svg')",
+        "background-animation-3": "url('@images/frame-animation-3.svg')",
+        "background-meal": "url('@images/party-dinner-bck.svg')",
+        "background-meal-left": "url('@images/party-dinner-bck-left.svg')",
+        "pizza": "url('@images/pizza.png')",
       },
       boxShadow: {
         custom: '0px 7px 30px 0px rgba(0, 0, 0, 0.10)',

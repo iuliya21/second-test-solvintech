@@ -9,8 +9,10 @@ import { useEffect, useState } from "react";
 import Birthday from "@components/birthday";
 import Animation from "@components/animation";
 import CardQuest from "./cardQuest";
+import PartyMeal from "./party-meal";
 
 const App = observer(() => {
+
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -78,7 +80,7 @@ const App = observer(() => {
   return (
     <div className="flex justify-center">
       <Modal title={titleModal} step={step} stepName={stepNameCurrent}>
-        {step === 1 ? (
+        {/* {step === 1 ? (
           <Programs>
             <Card title="Базовый" />
             <Card title="Улетный" />
@@ -115,13 +117,16 @@ const App = observer(() => {
               />
             )}
           </>
-        )}
-        {step === 5 && (
+        )} */}
+        {/* {step === 5 && (
           <Animation>
             <CardQuest title="Щенячий патруль возвращается" />
             <CardQuest title="Стив Майнкрафт" />
           </Animation>
-        )}
+        )} */}
+        {/* {step === 6 && ( */}
+          <PartyMeal mirror={false} meal="pizza" title="Пицца" price={1000} />
+        {/* )} */}
       </Modal>
     </div>
   );

@@ -1,10 +1,28 @@
 import { useEffect, useState } from "react";
 import { observer } from "mobx-react-lite";
 import ButtonCropped from "@components/buttonCropped";
+import Counter from "./counter";
 
 const CountGuest = observer(() => {
+
   const [countGuestChild, setCountGuestChild] = useState(10);
   const [countGuestAdults, setCountGuestAdults] = useState(10);
+
+  const incrementChild = () => {
+    setCountGuestChild(prevCount => prevCount + 1);
+  }
+
+  const decrementChild  = () => {
+    setCountGuestChild(prevCount => prevCount - 1);
+  }
+
+  const incrementAdult = () => {
+    setCountGuestAdults(prevCount => prevCount + 1);
+  }
+
+  const decrementAdult  = () => {
+    setCountGuestAdults(prevCount => prevCount - 1);
+  }
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -29,17 +47,17 @@ const CountGuest = observer(() => {
       ? `bg-background-count-middle w-[375px] h-[404px] flex flex-col
        relative z-10 ml-[-20px] mt-[-25px] p-[60px]`
       : isSmallScreen
-      ? `bg-background-count-small w-[375px] h-[348px] flex 
+        ? `bg-background-count-small w-[375px] h-[348px] flex 
       flex-col relative z-10 justify-between ml-[-20px] mt-[-25px] p-[60px]`
-      : `bg-background-countguest w-[530px] h-[480px] flex 
+        : `bg-background-countguest w-[530px] h-[480px] flex 
       flex-col relative z-10 justify-between mt-[-25px] ml-[-30px] p-[70px]`;
 
   const wrapper =
     (errorCount && isSmallScreen)
       ? `w-[335px] h-[344px] overflow-hidden`
       : isSmallScreen
-      ? `w-[335px] h-[288px]`
-      : `w-[470px] h-[420px]`;
+        ? `w-[335px] h-[288px]`
+        : `w-[470px] h-[420px]`;
 
   return (
     <div className={wrapper}>
@@ -54,25 +72,9 @@ const CountGuest = observer(() => {
                 +1 200₽ за ребенка
               </p>
             </div>
-            <div className="flex items-center gap-x-5 max-sm:gap-x-3">
-              <div className="w-[45px] h-[45px]">
-                <button
-                  className="bg-background-btn-decr w-[105px] h-[105px] ml-[-30px] mt-[-24px]
-                cursor-pointer"
-                  onClick={() => setCountGuestChild((prev) => prev - 1)}
-                ></button>
-              </div>
-              <p className="text-4xl text-colorGreen font-black max-sm:text-2xl max-sm:mb-3">
-                {countGuestChild}
-              </p>
-              <div className="w-[45px] h-[45px]">
-                <button
-                  className="bg-background-btn-inc w-[105px] h-[105px] ml-[-30px] mt-[-24px]
-                cursor-pointer"
-                  onClick={() => setCountGuestChild((prev) => prev + 1)}
-                ></button>
-              </div>
-            </div>
+            <Counter onIncrement={incrementChild} onDecrement={decrementChild}>
+              {countGuestChild}
+            </Counter> 
           </div>
           <div className="flex gap-x-10 mt-10 max-sm:gap-x-[25px] max-sm:mt-6">
             <div className="max-w-[178px] max-sm:max-w-[91px] flex flex-col">
@@ -86,25 +88,9 @@ const CountGuest = observer(() => {
                 Бесплатно
               </p>
             </div>
-            <div className="flex items-center gap-x-5 max-sm:gap-x-3">
-              <div className="w-[45px] h-[45px]">
-                <button
-                  className="bg-background-btn-decr w-[105px] h-[105px] ml-[-30px] mt-[-24px]
-                cursor-pointer"
-                  onClick={() => setCountGuestAdults((prev) => prev - 1)}
-                ></button>
-              </div>
-              <p className="text-4xl text-colorGreen font-black max-sm:text-2xl max-sm:mb-3">
-                {countGuestAdults}
-              </p>
-              <div className="w-[45px] h-[45px]">
-                <button
-                  className="bg-background-btn-inc w-[105px] h-[105px] ml-[-30px] mt-[-24px]
-                cursor-pointer"
-                  onClick={() => setCountGuestAdults((prev) => prev + 1)}
-                ></button>
-              </div>
-            </div>
+            <Counter onIncrement={incrementAdult} onDecrement={decrementAdult}>
+              {countGuestAdults}
+            </Counter> 
           </div>
         </div>
 

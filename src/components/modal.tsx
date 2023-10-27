@@ -16,7 +16,7 @@ const Modal: React.FC<TModalProps> = observer(
       <div
         className="relative items-center flex-col my-[124px] max-lg:my-0 py-[31px] 
         max-lg:p-[20px] max-lg:pb-[40px] bg-backgroundColorModal flex w-[1280px] 
-        max-xl:w-screen min-h-[835px] rounded-[40px] max-md:rounded-none overflow-hidden"
+        max-xl:w-screen min-h-[835px] rounded-[40px] max-md:rounded-none "
       >
         <div
           className="bg-close-button w-[30px] h-[30px] absolute top-10 right-10 

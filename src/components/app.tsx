@@ -10,9 +10,10 @@ import Birthday from "@components/birthday";
 import Animation from "@components/animation";
 import CardQuest from "./cardQuest";
 import PartyMeal from "./party-meal";
+import ButtonCropped from "./buttonCropped";
+import TotalPrice from "./totalPrice";
 
 const App = observer(() => {
-
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -27,11 +28,13 @@ const App = observer(() => {
     };
   }, []);
 
-  const isSmallScreen = windowWidth < 768;
+  const isLargeScreen = windowWidth < 1024;
+  const isMediumScreen = windowWidth < 768;
+  const isSmallScreen = windowWidth < 640;
 
   const { step } = counterStep;
 
-  const titleStep3 = isSmallScreen
+  const titleStep3 = isMediumScreen
     ? "Выберите дату"
     : "Выберите подходящую дату";
 
@@ -80,7 +83,7 @@ const App = observer(() => {
   return (
     <div className="flex justify-center">
       <Modal title={titleModal} step={step} stepName={stepNameCurrent}>
-        {/* {step === 1 ? (
+        {step === 1 ? (
           <Programs>
             <Card title="Базовый" />
             <Card title="Улетный" />
@@ -102,38 +105,86 @@ const App = observer(() => {
           <>
             <Birthday />
 
-            {!isSmallScreen && (
-              <img
-                src={require("../images/gifts.svg").default}
-                alt="Подарки"
-                className="absolute max-w-[1353px] h-full top-[100px] right-[-60px]"
-              />
+            {!isLargeScreen && (
+              <div className="absolute w-full h-full overflow-hidden left-0 top-0">
+                <img
+                  src={require("../images/gifts.svg").default}
+                  alt="Подарки"
+                  className="w-[1363px] h-[941px]"
+                />
+              </div>
             )}
-            {!isSmallScreen && (
+            {!isLargeScreen && (
               <img
                 src={require("../images/rainbow.svg").default}
                 alt="Радуга"
-                className="absolute w-[282px] h-[272px] top-[40%] left-[15px]"
+                className="absolute w-[282px] h-[272px] top-[326px] left-[50px]"
               />
             )}
           </>
-        )} */}
-        {/* {step === 5 && (
+        )}
+        {step === 5 && (
           <Animation>
             <CardQuest title="Щенячий патруль возвращается" />
             <CardQuest title="Стив Майнкрафт" />
           </Animation>
-        )} */}
-        {/* {step === 6 && ( */}
-        <div className="flex max-w-[832px] flex-wrap gap-x-5 gap-y-2">
-          <PartyMeal mirror={true} meal="pizza" title="Пицца" price={1000} />
-          <PartyMeal mirror={true} meal="french-fries" title="Картошка-фри" price={1000} />
-          <PartyMeal mirror={false} meal="nuggets" title="Наггетсы" price={1000} />
-          <PartyMeal mirror={false} meal="drinks" title="Напитки" price={1000} />
-          <PartyMeal mirror={true} meal="cakes" title="Торты" price={1000} />
-        </div>
-
-        {/* )} */}
+        )}
+        {step === 6 && (
+          <div>
+            <div className="flex max-w-[832px] flex-wrap gap-x-5 gap-y-2 justify-center">
+              <PartyMeal
+                mirror={false}
+                meal="bg-pizza"
+                title="Пицца"
+                price={1000}
+              />
+              <PartyMeal
+                mirror={isSmallScreen ? true : false}
+                meal={
+                  isSmallScreen ? "bg-french-fries-small" : "bg-french-fries"
+                }
+                title="Картошка-фри"
+                price={1000}
+              />
+              <PartyMeal
+                mirror={isSmallScreen ? false : true}
+                meal={isSmallScreen ? `bg-nuggets-small` : `bg-nuggets`}
+                title="Наггетсы"
+                price={1000}
+              />
+              <PartyMeal
+                mirror={true}
+                meal="bg-drinks"
+                title="Напитки"
+                price={1000}
+              />
+              <PartyMeal
+                mirror={false}
+                meal="bg-cakes"
+                title="Торты"
+                price={1000}
+              />
+            </div>
+            <div className="mt-5 flex justify-center">
+              <ButtonCropped text="Продолжить" />
+            </div>
+          </div>
+        )}
+        {step === 7 && (
+          <>
+            <TotalPrice />
+            <img
+              src={require("../images/gifts-total-price-1.svg").default}
+              alt="Подарки"
+              className="absolute w-[618px] h-[585px] top-[182px] right-[868px]"
+            />
+            <img
+              src={require("../images/gifts-total-price-2.svg").default}
+              alt="Подарки"
+              className="absolute w-[470px] h-[546px] top-[198px] left-[905px]"
+            />
+          </>
+        )}
       </Modal>
     </div>
   );

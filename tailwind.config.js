@@ -38,18 +38,46 @@ module.exports = {
         "background-animation-1": "url('@images/frame-animation-1.svg')",
         "background-animation-2": "url('@images/frame-animation-2.svg')",
         "background-animation-3": "url('@images/frame-animation-3.svg')",
-        "background-meal": "url('@images/party-dinner-bck.svg')",
-        "background-meal-left": "url('@images/party-dinner-bck-left.svg')",
+        "background-meal": "url('@images/party-dinner.svg')",
+        "background-meal-left": "url('@images/party-dinner-left.svg')",
+        "background-meal-small": "url('@images/party-dinner-small.svg')",
+        "background-meal-left-small": "url('@images/party-dinner-left-small.svg')",
+        "background-total-price": "url('@images/total-price.svg')",
         "pizza": "url('@images/pizza.png')",
         "french-fries": "url('@images/french-fries.png')",
+        "french-fries-small": "url('@images/french-fries-small.png')",
         "nuggets": "url('@images/nuggets.png')",
+        "nuggets-small": "url('@images/nuggets-small.png')",
         "drinks": "url('@images/drinks.png')",
-        "ca": "url('@images/french-fries.png')",
+        "cakes": "url('@images/cakes.png')",
       },
       boxShadow: {
         custom: '0px 7px 30px 0px rgba(0, 0, 0, 0.10)',
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities(
+        {
+          '.scrollbar': {
+            scrollbarWidth: 'thin',
+            scrollbarColor: '#D9D9D9 #FFFFFF',
+          },
+          '.scrollbar::-webkit-scrollbar': {
+            width: '6px',
+            borderRadius: '10px',
+          },
+          '.scrollbar::-webkit-scrollbar-thumb': {
+            backgroundColor: '#D9D9D9',
+            borderRadius: '10px',
+          },
+          '.scrollbar::-webkit-scrollbar-track': {
+            backgroundColor: '#FFFFFF',
+          },
+        },
+        ['responsive', 'hover']
+      );
+    },
+  ],
 };

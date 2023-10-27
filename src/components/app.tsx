@@ -125,7 +125,14 @@ const App = observer(() => {
           </Animation>
         )} */}
         {/* {step === 6 && ( */}
-          <PartyMeal mirror={false} meal="pizza" title="Пицца" price={1000} />
+        <div className="flex max-w-[832px] flex-wrap gap-x-5 gap-y-2">
+          <PartyMeal mirror={true} meal="pizza" title="Пицца" price={1000} />
+          <PartyMeal mirror={true} meal="french-fries" title="Картошка-фри" price={1000} />
+          <PartyMeal mirror={false} meal="nuggets" title="Наггетсы" price={1000} />
+          <PartyMeal mirror={false} meal="drinks" title="Напитки" price={1000} />
+          <PartyMeal mirror={true} meal="cakes" title="Торты" price={1000} />
+        </div>
+
         {/* )} */}
       </Modal>
     </div>

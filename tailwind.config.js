@@ -41,6 +41,10 @@ module.exports = {
         "background-meal": "url('@images/party-dinner-bck.svg')",
         "background-meal-left": "url('@images/party-dinner-bck-left.svg')",
         "pizza": "url('@images/pizza.png')",
+        "french-fries": "url('@images/french-fries.png')",
+        "nuggets": "url('@images/nuggets.png')",
+        "drinks": "url('@images/drinks.png')",
+        "ca": "url('@images/french-fries.png')",
       },
       boxShadow: {
         custom: '0px 7px 30px 0px rgba(0, 0, 0, 0.10)',

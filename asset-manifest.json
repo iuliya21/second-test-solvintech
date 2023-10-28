@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/second-test-solvintech/static/css/main.71d73f03.css",
-    "main.js": "/second-test-solvintech/static/js/main.a002899e.js",
+    "main.js": "/second-test-solvintech/static/js/main.3efbbf44.js",
     "static/media/gifts-total-price-1.svg": "/second-test-solvintech/static/media/gifts-total-price-1.90dae91b714fa26975fbfdb784eb5f33.svg",
     "static/media/party-step2.svg": "/second-test-solvintech/static/media/party-step2.05d8d4e902b1591ae952811725905c04.svg",
     "static/media/party-step8.svg": "/second-test-solvintech/static/media/party-step8.2b42d72bfd293e0d4334b05e19357857.svg",
@@ -91,10 +91,10 @@
     "static/media/left.svg": "/second-test-solvintech/static/media/left.62378a31d718a05bb6ae1894f5da2a45.svg",
     "static/media/right.svg": "/second-test-solvintech/static/media/right.7ed7d5532309ec6e70c381adef8b2c0f.svg",
     "main.71d73f03.css.map": "/second-test-solvintech/static/css/main.71d73f03.css.map",
-    "main.a002899e.js.map": "/second-test-solvintech/static/js/main.a002899e.js.map"
+    "main.3efbbf44.js.map": "/second-test-solvintech/static/js/main.3efbbf44.js.map"
   },
   "entrypoints": [
     "static/css/main.71d73f03.css",
-    "static/js/main.a002899e.js"
+    "static/js/main.3efbbf44.js"
   ]
 }

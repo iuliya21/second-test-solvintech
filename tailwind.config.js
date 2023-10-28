@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        backgroundColorModal: "#FFC907",
+        backgroundColorModal: "#FFD94D",
         colorBlue: "#00B4D2",
         colorGreen: "#39B54A",
         colorGrey: "#949494",
@@ -43,6 +43,8 @@ module.exports = {
         "background-meal-small": "url('@images/party-dinner-small.svg')",
         "background-meal-left-small": "url('@images/party-dinner-left-small.svg')",
         "background-total-price": "url('@images/total-price.svg')",
+        "background-total-price-small": "url('@images/total-price-small.svg')",
+        "background-contacts": "url('@images/contacts.svg')",
         "pizza": "url('@images/pizza.png')",
         "french-fries": "url('@images/french-fries.png')",
         "french-fries-small": "url('@images/french-fries-small.png')",
@@ -50,6 +52,7 @@ module.exports = {
         "nuggets-small": "url('@images/nuggets-small.png')",
         "drinks": "url('@images/drinks.png')",
         "cakes": "url('@images/cakes.png')",
+        "human": "url('@images/human.svg')",
       },
       boxShadow: {
         custom: '0px 7px 30px 0px rgba(0, 0, 0, 0.10)',

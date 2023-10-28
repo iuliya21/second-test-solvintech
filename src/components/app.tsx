@@ -12,6 +12,7 @@ import CardQuest from "./cardQuest";
 import PartyMeal from "./party-meal";
 import ButtonCropped from "./buttonCropped";
 import TotalPrice from "./totalPrice";
+import Contacts from "./contacts";
 
 const App = observer(() => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -131,7 +132,7 @@ const App = observer(() => {
         )}
         {step === 6 && (
           <div>
-            <div className="flex max-w-[832px] flex-wrap gap-x-5 gap-y-2 justify-center">
+            <div className="flex max-w-[832px] flex-wrap gap-x-5 gap-y-2 max-lg:justify-center">
               <PartyMeal
                 mirror={false}
                 meal="bg-pizza"
@@ -173,6 +174,7 @@ const App = observer(() => {
         {step === 7 && (
           <>
             <TotalPrice />
+
             <img
               src={require("../images/gifts-total-price-1.svg").default}
               alt="Подарки"
@@ -181,7 +183,22 @@ const App = observer(() => {
             <img
               src={require("../images/gifts-total-price-2.svg").default}
               alt="Подарки"
-              className="absolute w-[470px] h-[546px] top-[198px] left-[905px]"
+              className="absolute w-[470px] h-[546px] top-[198px] left-[905px] max-xl:right-[0px] max-xl:hidden"
+            />
+          </>
+        )}
+        {step === 8 && (
+          <>
+            <Contacts />
+            <img
+              src={require("../images/party-step8.svg").default}
+              alt="Вечеринка"
+              className="absolute z-0 right-[936px] max-xl:left-0 bottom-[134px] max-md:hidden w-[442px] h-[436px]"
+            />
+            <img
+              src={require("../images/calendar-step8.svg").default}
+              alt="Вечеринка"
+              className="absolute z-0 right-[-159px] bottom-[91px] max-xl:hidden w-[544px] h-[495px]"
             />
           </>
         )}

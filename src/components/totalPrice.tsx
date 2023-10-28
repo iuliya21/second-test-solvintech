@@ -19,7 +19,7 @@ const TotalPrice = () => {
 
   const isSmallScreen = windowWidth < 640;
 
-  const wrapper = isSmallScreen ? `w-[335px] h-[683px] overflow-hidden` : `w-[490px] h-[520px] relative z-10`;
+  const wrapper = isSmallScreen ? `w-[335px] h-[683px]` : `w-[490px] h-[520px] relative z-10`;
   const container = isSmallScreen
     ? `w-[375px] h-[743px] bg-background-total-price-small ml-[-20px] mt-[-23px] px-[60px] pt-[58px]`
     : `w-[550px] h-[580px] bg-background-total-price ml-[-30px] mt-[-23px] px-[70px] pt-[58px]`;
